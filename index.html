@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Calculator app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container theme1">
+      <main class="calc">
+        <div class="head theme1">
+          <div class="title">Calc</div>
+          <div class="toggle-switch theme1">
+            <div class="theme">THEME</div>
+            <input type="radio" name="toggle" id="toggle1" checked>
+            <label for="toggle1">1</label>
+            <input type="radio" name="toggle" id="toggle2">
+            <label for="toggle2">2</label>
+            <input type="radio" name="toggle" id="toggle3">
+            <label for="toggle3">3</label>
+            <div class="toggle theme1"></div>
+          </div>
+        </div>
+        <input id="display" class="theme1"  value="0" disabled></input>
+        <div class="button theme1">
+          <button class="number theme1" value="7">7</button>
+          <button class="number theme1" value="8">8</button>
+          <button class="number theme1" value="9">9</button>
+          <button class="operator del theme1" value="D">DEL</button>
+          <button class="number theme1" value="4">4</button>
+          <button class="number theme1" value="5">5</button>
+          <button class="number theme1" value="6">6</button>
+          <button class="operator theme1" value="+">+</button>
+          <button class="number theme1" value="1">1</button>
+          <button class="number theme1" value="2">2</button>
+          <button class="number theme1" value="3">3</button>
+          <button class="operator theme1" value="-">-</button>
+          <button class="operator theme1" value=".">.</button>
+          <button class="number theme1" value="0">0</button>
+          <button class="operator theme1" value="/">/</button>
+          <button class="operator theme1" value="*">x</button>
+          <button class="operator res theme1" value="R">RESET</button>
+          <button class="operator eval theme1" value="=">=</button>
+        </div>
+      </main>
+      <!-- <div class="attribution">
+        <footer>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="#">Your Name Here</a>.
+        </footer>
+      </div> -->
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>

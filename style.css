@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+
+:root {
+  --calcWidth: 370px;
+  --mobile: 300px;
+  /* Theme 1 */
+  /* Background */
+  --mB1: hsl(222, 26%, 31%);
+  --tKB1: hsl(223, 31%, 20%);
+  --sB1: hsl(224, 36%, 15%);
+
+  /* Keys */
+  /* delete Reset */
+  --delResC1: hsl(225, 21%, 49%);
+  --delResS1: 0 3.5px hsl(224, 28%, 35%);
+
+  /* Eval Toggle */
+  --evT1: hsl(6, 63%, 50%);
+  --evS1: 0 3.5px hsl(6, 70%, 34%);
+
+  --numB1: hsl(30, 25%, 89%);
+  --numS1: 0 3.5px hsl(28, 16%, 65%);
+
+  /* Text */
+  --bTC1: hsl(221, 14%, 31%);
+  --disDelRETC1: hsl(0, 0%, 100%);
+  /* Theme 1 */
+
+  /* Theme 2 */
+  /* Background */
+  --mB2: hsl(0, 0%, 90%);
+  --tKB2: hsl(0, 5%, 81%);
+  --sB2: hsl(0, 0%, 93%);
+
+  /* Keys */
+  /* delete Reset */
+  --delResC2: hsl(185, 42%, 37%);
+  --delResS2: 0 3.5px hsl(185, 58%, 25%);
+
+  /* Eval Toggle */
+  --evT2: hsl(25, 98%, 40%);
+  --evS2: 0 3.5px hsl(25, 99%, 27%);
+
+  --numB2: hsl(45, 7%, 89%);
+  --numS2: 0 3.5px hsl(35, 11%, 61%);
+
+  /* Text */
+  --bHDTC2: hsl(60, 10%, 19%);
+  --delRETC2: hsl(0, 0%, 100%);
+  /* Theme 2 */
+
+  /* Theme 3 */
+  /* Background */
+  --mB3: hsl(268, 75%, 9%);
+  --tKSB3: hsl(268, 71%, 12%);
+
+  /* Keys */
+  --kB3: hsl(268, 47%, 21%);
+  --kS3: 0 3.5px hsl(290, 70%, 36%);
+
+  --evTB3: hsl(176, 100%, 44%);
+  --evS3: 0 3.5px hsl(177, 92%, 70%);
+
+  --delResB3: hsl(281, 89%, 26%);
+  --delResS3: 0 3.5px hsl(285, 91%, 52%);
+
+  /* Text */
+
+  --disHNTC3: hsl(52, 100%, 62%);
+  --evTC3: hsl(198, 20%, 13%);
+  --delResTC3: hsl(0, 0%, 100%);
+  /* Theme 3 */
+}
+
+body {
+  margin: 0;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calc {
+  display: grid;
+  grid-template-rows: 10% 15% 75%;
+  gap: 7px;
+  width: 400px;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 85% 15%;
+  /* width: var(--calcWidth); */
+}
+
+.title {
+  font-size: larger;
+}
+
+/* Toggle */
+/* start */
+
+.toggle-switch {
+  position: relative;
+  height: 19px;
+  border-radius: 100px;
+  width: 98%;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  position: relative;
+  top: -18px;
+  left: 3px;
+  width: 15px;
+  height: 36px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.toggle {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 13px;
+  height: 13px;
+  border-radius: 100%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#toggle1:checked ~ .toggle {
+  transform: translateX(0);
+}
+#toggle2:checked ~ .toggle {
+  transform: translateX(20px);
+}
+#toggle3:checked ~ .toggle {
+  transform: translateX(40px);
+}
+
+.theme {
+  position: absolute;
+  left: -50px;
+  top: 6px;
+  letter-spacing: 1px;
+}
+
+.theme,
+label {
+  font-size: x-small;
+}
+
+/* end */
+
+/* Input Display */
+/* start */
+
+#display {
+  text-align: end;
+  padding: 15px;
+  border: none;
+  font-size: 40px;
+  width: var(--calcWidth);
+}
+
+/* end */
+
+/* Button Background*/
+/* start */
+
+.button {
+  display: grid;
+  grid-template-columns: 23% 23% 23% 23%;
+  gap: 10px;
+  height: fit-content;
+  padding: 15px;
+  width: var(--calcWidth);
+}
+
+button,
+input,
+.button {
+  border-radius: 7px;
+}
+
+/* end */
+
+/* Buttons */
+/* start */
+
+.res {
+  grid-column: 1/3;
+}
+
+.eval {
+  grid-column: 3/5;
+}
+
+.operator,
+.res,
+.eval {
+  font-size: 17px;
+  font-weight: bolder;
+}
+
+button {
+  height: 45px;
+  border: none;
+  cursor: pointer;
+}
+
+button,
+input,
+.head {
+  font-family: "League Spartan", sans-serif;
+}
+
+button:not(.res, .del) {
+  font-size: 25px;
+}
+
+.number {
+  font-size: 32px;
+}
+
+/* end */
+
+.toggle:hover,
+button:hover {
+  filter: brightness(150%);
+}
+
+@media only screen and (max-width: 430px) {
+  .calc {
+    width: max-content;
+  }
+
+  label {
+    width: 12px;
+  }
+
+  #toggle1:checked ~ .toggle {
+    transform: translateX(0);
+  }
+  #toggle2:checked ~ .toggle {
+    transform: translateX(15px);
+  }
+  #toggle3:checked ~ .toggle {
+    transform: translateX(30px);
+  }
+
+  #display {
+    width: var(--mobile);
+  }
+
+  .button {
+    width: var(--mobile);
+  }
+}
+
+/* Theme 1*/
+/* start */
+.container.theme1 {
+  background-color: var(--mB1);
+}
+
+.head.theme1 {
+  color: var(--disDelRETC1);
+}
+
+.toggle-switch.theme1 {
+  background-color: var(--tKB1);
+}
+
+.toggle.theme1 {
+  background-color: var(--evT1);
+}
+
+#display.theme1 {
+  background-color: var(--sB1);
+  color: var(--disDelRETC1);
+}
+
+.button.theme1 {
+  background-color: var(--tKB1);
+}
+
+.number.theme1,
+.operator.theme1 {
+  background-color: var(--numB1);
+  box-shadow: var(--numS1);
+}
+
+.eval.theme1 {
+  background-color: var(--evT1);
+  color: var(--disDelRETC1);
+  box-shadow: var(--evS1);
+}
+
+.res.theme1,
+.del.theme1 {
+  background-color: var(--delResC1);
+  color: var(--disDelRETC1);
+  box-shadow: var(--delResS1);
+}
+
+button.theme1 {
+  color: var(--bTC1);
+}
+/* end */
+
+/* Theme 2*/
+/* start */
+.container.theme2 {
+  background-color: var(--mB2);
+}
+
+.head.theme2 {
+  color: var(--bHDTC2);
+}
+
+.toggle-switch.theme2 {
+  background-color: var(--tKB2);
+}
+
+.toggle.theme2 {
+  background-color: var(--evT2);
+}
+
+#display.theme2 {
+  background-color: var(--sB2);
+  color: var(--bHDTC2);
+}
+
+.button.theme2 {
+  background-color: var(--tKB2);
+}
+
+.number.theme2,
+.operator.theme2 {
+  background-color: var(--numB2);
+  box-shadow: var(--numS2);
+}
+
+.eval.theme2 {
+  background-color: var(--evT2);
+  color: var(--delRETC2);
+  box-shadow: var(--evS2);
+}
+
+.res.theme2,
+.del.theme2 {
+  background-color: var(--delResC2);
+  color: var(--delRETC2);
+  box-shadow: var(--delResS2);
+}
+
+button.theme2 {
+  color: var(--bHDTC2);
+}
+/* end */
+
+/* Theme 3*/
+/* start */
+.container.theme3 {
+  background-color: var(--mB3);
+}
+
+.head.theme3 {
+  color: var(--disHNTC3);
+}
+
+.toggle-switch.theme3 {
+  background-color: var(--tKSB3);
+}
+
+.toggle.theme3 {
+  background-color: var(--evTB3);
+}
+
+#display.theme3 {
+  background-color: var(--tKSB3);
+  color: var(--disHNTC3);
+}
+
+.button.theme3 {
+  background-color: var(--tKSB3);
+}
+
+.number.theme3,
+.operator.theme3 {
+  background-color: var(--kB3);
+  box-shadow: var(--kS3);
+}
+
+.eval.theme3 {
+  background-color: var(--evTB3);
+  color: var(--evTC3);
+  box-shadow: var(--evS3);
+}
+
+.res.theme3,
+.del.theme3 {
+  background-color: var(--delResB3);
+  color: var(--delResTC3);
+  box-shadow: var(--delResS3);
+}
+
+button.theme3 {
+  color: var(--disHNTC3);
+}
+/* end */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
